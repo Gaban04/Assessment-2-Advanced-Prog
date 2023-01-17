@@ -15,7 +15,7 @@ root.resizable(0,0)
 
 try:
 
-#Function to get the weather link and API key.
+#Function to get the weather web link and API key.
      def weather_data(query):
                      res=requests.get('http://api.openweathermap.org/data/2.5/weather?'+query+'&appid=06c921750b9a82d8f5d1294e1586276f');
                      return res.json();
@@ -100,7 +100,22 @@ try:
                Label(root,image=img,border=0).place(x=0,y=50)
                fcolor="white"
                bcolor="#D68200"     
-               
+
+
+          elif w<=10 and weather=="Clear":
+               Frame(root,width=800,height=350,bg="#Ff9626").place(x=0,y=50)          
+               img = ImageTk.PhotoImage(Image.open("sun2.png"))
+               Label(root,image=img,border=0).place(x=0,y=50)
+               fcolor="white"
+               bcolor="#D68200"        
+
+
+          elif w>=10 and weather=="Clear":
+               Frame(root,width=800,height=350,bg="#Ff9626").place(x=0,y=50)          
+               img = ImageTk.PhotoImage(Image.open("sun2.png"))
+               Label(root,image=img,border=0).place(x=0,y=50)
+               fcolor="white"
+               bcolor="#D68200"       
 
 
           #Cloudy weather.
