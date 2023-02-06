@@ -1,0 +1,313 @@
+CHAPTER 1--------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+EXERCISE 1: PRINT==================================================================================================================
+
+
+
+
+print("Python uses interpreter to convert source code into machine code.\nInterpreter translates program one statement at a time.")
+
+#print displays the sentence within the quotations. \n means a new line.
+
+
+
+EXERCISE 2: CONSTANT VARIABLE PI===================================================================================================
+
+
+
+
+print("Kindly enter the radius of the circle: ")
+rad = float(input()) #Float is used for decimal integers
+pi = 3.14 #PI is equivalent to 3.14
+cir = 2 * pi * rad #Code solves the equation
+print("\nThe circumference is: ", cir)
+
+
+
+
+EXERCISE 3A: USER INPUT OUTPUT===================================================================================================
+
+
+
+
+#Input allows the user to input their answers 
+name = input("Please enter your Name: ")
+age = input("And your age: ")
+home = input("And your home place: ")
+
+print("\nYour name is: ", name, "\nYour age is: ", age, "\nYour home place is: ", home)
+#Displays the user's answer
+
+
+
+
+EXERCISE 3B: USER INPUT OUTPUT===================================================================================================
+
+
+
+
+name = input("What is your name?: \n")
+print("Your name is: ", name)
+age = input("What is your age?: ")
+print(age)
+name2 = name.title() #title() capitalizes the first letter in the word
+print("It is good to meet you, ", name2)
+
+print("The length of your name is: ", len(name2)) # len() calculates how much letters the word has
+        
+print("You will be " + str(int(age)+1) + " in a year.") #the (age)+1 adds 1 more number to the age
+
+
+
+
+
+EXERCISE 4: NUMBER INPUT OUTPUT===================================================================================================
+
+
+
+
+
+print("Enter three numbers:") 
+number1 = int(input("Number 1: ")) #int input lets the software know that you are inputting specifically an intger
+number2 = int(input("Number 2: "))
+number3 = int(input("Number 3: "))
+print("Your numbers forward:") 
+
+
+
+print(number1) #prints the number from the first to last
+print(number2)
+print(number3)
+print("Your numbers reversed:")
+
+
+
+print(number3) #prints the number from last to first
+print(number2)
+print(number1)
+
+
+
+
+
+EXERCISE 5: MATHS=================================================================================================================
+
+
+
+
+#Starting the code with a function
+
+def adding(a, b):
+    return a + b
+
+def subtracting(a, b):
+    return a - b
+
+def multiplying(a, b):
+    return a * b
+
+def dividing(a, b):
+    return a / b
+
+
+
+#Main code. The user is asked to choose between the 4 options below
+print("Please select an operation upon your choice.")
+print("1.Addition")
+print("2.Subtraction")
+print("3.Multiplication")
+print("4.Division")
+
+
+
+
+while True:
+    Choice = input("Enter choice(1/2/3/4): ")
+
+    #Checks if the users choice is one of the four options
+    if Choice in ('1', '2', '3', '4'):
+        num1 = float(input("Enter first number: "))
+        num2 = float(input("Enter second number: "))
+
+        if Choice == '1':
+            print(num1, "+", num2, "=", adding(num1, num2))
+
+        elif Choice == '2':
+            print(num1, "-", num2, "=", subtracting(num1, num2))
+
+        elif Choice == '3':
+            print(num1, "*", num2, "=", multiplying(num1, num2))
+
+        elif Choice == '4':
+            print(num1, "/", num2, "=", dividing(num1, num2))
+
+
+        
+        nextcal = input("Would you like to make another calculation? (yes/no): ") #It checks if the user wants to make a new calculation. 
+       #If user chose no, the code terminates.
+        if nextcal == "no":
+          break
+
+
+    
+    else:
+        print("Input found invalid!")
+
+                  #A wrong input the code detected
+
+
+
+
+EXERCISE 6: IS IT TRIANGLE=============================================================================================================
+
+
+
+
+
+print("Kindly input the length the three sides of the triangle: ") #Input for the 3 sides of a triangle
+
+s1 = int(input("Side 1: "))
+s2 = int(input("Side 2: "))
+s3 = int(input("Side 3: "))
+
+
+if s1 == s2 == s3:
+	    print("That is an equilateral triangle!")
+elif s1==s2 or s2==s3 or s3==s2: #Checking if the sides it is an isoceles or not.
+	    print("That is an isosceles triangle!")
+else:
+	    print("That is a scalene triangle!")
+
+
+
+
+
+EXERCISE 7: IS IT EVEN=================================================================================================================
+
+
+
+
+
+Num = int(input("Please enter a number of your choice: "))
+
+Out = "That is an even number." if (Num % 2) == 0 else "That is an odd number."
+print(Out) #This is done with ternary operator. Ternary operator is within if else statement in only one line.
+ 
+
+
+
+
+
+EXERCISE 8: LARGEST NUMBER=============================================================================================================
+
+
+
+
+
+a = int(input("Please enter your first number: "))
+b = int(input("Your second number: "))
+c = int(input("And your third number: "))
+#Input for the three numbers.
+ 
+
+if (a > b) and (a > c): 
+   greatest = a
+elif (b> a) and (b > c):
+   greatest = b
+else:
+   greatest = c
+#Multiple if else statements was used and so were the ternary operators. 
+
+
+print("\nThe largest number here is:", greatest)
+#Output
+
+
+
+
+
+EXERCISE 9: CONTINUE===================================================================================================================
+
+
+
+coaster = True
+
+while coaster:
+
+    print("Welcome to the roller coaster! To enter this ride, you must be at least at the age of 10 and a height of 1.35")
+
+    age = int(input("Please enter your age: "))
+
+    #if age is less than 10 yrs old, then the code will stop running since the age does not meet the requirements.
+    if age <= 9:
+        print ("You are too young for this ride.")
+        break
+
+    #if it is above 10, then the code will continue.
+    elif age > 10:
+        print ("You age is eligible for this ride!")
+     
+        #asking the user about his or her height.
+    height = float(input("What is your height?(Enter in meter. Ex: 1.68): "))
+    
+    if height <= 1.3: #the code will stop there if the user's height is too low.
+        print ("You are too short for the ride.")
+        break
+
+    elif height > 1.35:#the code will continue if it meets the requirements.
+        print ("You are eligible for this ride!")
+
+    again = input("Would you like to try this again?: ").lower() #asking the user if they want to go again.
+    while True:
+        if again == 'yes': #the code goes back to the beginning if its yes.
+            coaster = True
+            break
+        elif again == 'no': #the code terminates if it was a no.
+            coaster = False
+            break
+        else:
+            again = input('Invalid input. Type "YES" to try again or "NO" to leave": ').lower()
+            #if the user did not put a correct answer, the code will not end and ask for the proper answer.
+
+
+
+EXERCISE 10: FIZZBUZZ==================================================================================================================
+
+
+
+
+for Num in range(1, 101):
+    #The numbers ranging from 1 - 100.
+
+    if Num % 3 == 0 and Num % 5 == 0:
+        print("FizzBuzz!: "+str(Num))
+        #If any of the numbers are divisible with 3 and 5 it says FizzBuzz
+
+    elif Num % 3 == 0:
+        print("Fizz!:" +str(Num))
+        #If 3 is divisible with one of the numbers in 1-100 
+
+    elif Num % 5 == 0:
+        print("Buzz!:" +str(Num))
+        #If 5 is divisible with one of the numbers in 1-100 
+
+    else:
+
+        print(Num)
+
+
+
+OPTIONAL EXECERISE 14: PRINT PATTERN===================================================================================================
+
+#Declaring the number of rows
+Rows = 5
+for i in range(0, Rows):
+          #The nested loop for each of the columns.
+    for I in range(0, i + 1):
+        print("*", end=' ') #Here the star prints.
+    print("\r") #A new line after each row.
