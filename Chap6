@@ -1,0 +1,117 @@
+CHAPTER 6===========================================================================================================================
+
+
+EXERCISE 1==========================================================================================================================
+
+import math 
+
+a = 2.3 #Ceiling and floor
+aA = 5 #Factorial
+Aa = 16 # Squareroot
+ceiling = math.ceil(a)
+floor = math.floor(a)
+fact = math.pow(2,3)
+sqr_root = math.sqrt(16)
+print(ceiling, floor, fact, sqr_root) 
+
+
+EXERCISE 2==========================================================================================================================
+
+
+
+a = [20, 23, 82, 40, 32, 15, 67, 52]
+indicesEven = []
+
+
+for i, num in enumerate(a):
+    if num % 2 == 0:
+        indicesEven.append(i)
+
+
+print(indicesEven)
+sort = sorted(a)
+print(sort)
+
+sliceA = a[3:]
+print(sliceA)
+
+sliceB = a[:4]
+print(sliceB)
+
+sliceC = a[-5 :-2: -1]
+print(sliceC)
+
+
+
+EXERCISE 3==========================================================================================================================
+
+
+
+import operator
+
+def Calc():
+    print("Welcome to the calculator menu!\n"
+          "Select 1 out of the 6 to begin!\n"
+          "1. Addition\n"
+          "2. Subtraction\n"
+          "3. Multiplication\n"
+          "4. Division\n"
+          "5. Modulus\n"
+          "6. Check for greater number\n"
+          "If you want to proceed no more, type quit or simply press Q."
+    )
+
+    while True:
+        try:
+            desision = input("Kindly input a choice of yours: ")
+            if desision == "Q" or desision == "q" or desision == "Quit" or desision == "quit":
+                print("Program terminated.")
+                break
+            
+            desision = int(desision)
+            Num1 = int(input("Kindly enter first number: "))
+            Num2 = int(input("Kindly enter second number: "))
+
+            if desision == 1:
+                outcome = operator.add(Num1, Num2)
+            elif desision == 2:
+                outcome = operator.sub(Num1, Num2)
+            elif desision == 3:
+                outcome = operator.mul(Num1, Num2)
+            elif desision == 4:
+                outcome = operator.truediv(Num1, Num2)
+            elif desision == 5:
+                outcome = operator.mod(Num1, Num2)
+            elif desision == 6:
+                outcome = Num1 if Num1 > Num2 else Num2
+
+            print("Outcome: ", outcome)
+        except ValueError:
+            print("Input Invalid! Try again!")
+
+Calc()
+
+        
+
+
+EXERCISE 4==========================================================================================================================
+
+
+
+import matplotlib.pyplot as plt
+
+Data = {"Game": [279, 200],"Commercials": [81, 156], "Won't watch": [132, 160],}
+
+feg, ed = plt.subplots()
+
+a = list(Data.keys())
+a1 = [d[0] for d in Data.values()]
+a2 = [d[1] for d in Data.values()]
+ed.bar(a, a1, color="b")
+ed.bar(a, a2, color="g", bottom=a1)
+
+ed.set_ylabel("The Number of respondants")
+ed.set_title("Plans to watch the 2007 super bowl")
+ed.legend(["Male", "Female"])
+
+plt.show()
