@@ -1,0 +1,154 @@
+CHAPTER 4==========================================================================================================================
+
+
+
+
+EXERCISE 1==========================================================================================================================
+
+
+
+i = open("info.txt", "w")
+Name = str(input("Name: "))
+Age = int(input("Age: "))
+homeTowN = str(input("Hometown: "))
+
+
+i.write(f"Name: {Name} \n")
+i.write(f"Age: {str(Age)} \n")
+i.write(f"Hometown: {homeTowN} \n")
+i.close()
+
+i = open('info.txt', "r+")
+print("Your input: ")
+Line = i.readlines()
+
+for diffLine in Line:
+    print(diffLine.rstrip())
+
+
+
+EXERCISE 2==========================================================================================================================
+
+
+
+
+text = "Amster Sani's name in the  file occured: "
+nameFile = "sentence.txt"
+
+with open (nameFile, 'r') as file_handlre:
+    for count, Line in enumerate(file_handlre):
+        pass
+    print('Total lines', count + 1)
+    for Line in file_handlre:
+        if(Line==text):
+            count=count+1
+    print(text, ":", count, "Times!")
+
+
+
+
+
+EXERCISE 3==========================================================================================================================
+
+
+
+i = open("numbers.txt", "r")
+print(i.readlines())
+
+
+
+EXERCISE 4==========================================================================================================================
+
+
+
+
+with open("petrolPrice.txt", "r") as i:
+    Lines = i.readlines()
+    Liters = []
+    Price = []
+    petrul = [i.split() for i in Lines]
+    for s in Lines:
+        Data = s.split()
+        Liters.append((Data[0]))
+        Price.append((Data[1]))
+
+num = 7
+
+#Converting the string list to int
+conLiters = [eval(i) for i in Liters]
+conPrice = [eval(i) for i in Price]
+
+LiterPer = [i / j for i, j in zip(conPrice, conLiters)]
+ave = sum(LiterPer) / len(conPrice)
+
+print(f'Petrol info: {petrul}')
+
+#The overall average price of petrol bought per liter.
+print(f'\nSum up of the average price per liters spent on: {ave}')
+print(LiterPer)        
+
+
+
+
+EXERCISE 5==========================================================================================================================
+
+
+
+
+import string
+File = open("sentence.txt", "r")
+text = File.read()
+countLetter = {} #An empty list for chars
+for Letters in text:
+    if Letters in string.ascii_letters: #Purpose of acsii_letters is to only include the lower and uppercase.
+        if Letters in countLetter:
+           countLetter[Letters] += 1
+    else:
+        countLetter[Letters] = 1
+
+for Letters, countLetter in countLetter.items():
+    print(f'{Letters}: {countLetter}')
+
+
+
+
+
+EXERCISE 6==========================================================================================================================
+
+
+
+
+import string
+minuLength = 6
+MaxiLength = 12
+Atempt = 0
+while Atempt < 5:
+    Pass = input("Enter a password: ")
+    if minuLength <= len(Pass) <= MaxiLength:
+        #Boolean values to check.
+        low = False
+        upp = False
+        digit = False
+        unique = False
+
+        for char in Pass:
+            if char in string.ascii_lowercase:
+                low = True
+            elif char in string.ascii_uppercase:
+                upp = True
+            elif char in string.digits:
+                digit = True
+            elif char in '$#@':
+                unique = True
+        if low and upp and digit and unique:
+
+            print("Correct password!")
+            break
+        else:
+            print("Wrong password!")
+
+    else:
+        print("Wrong password!")
+
+    Atempt += 1
+print("The authorities acknowledged your present, and has your head to hunt.")
