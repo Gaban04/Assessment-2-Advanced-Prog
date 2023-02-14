@@ -1,0 +1,126 @@
+CHAPTER 2====================================================================================================================================
+
+
+
+EXERCISE 1: INPUT LIST=======================================================================================================================
+
+
+
+#Asking the user to enter 5 numbers in
+int1 = (input("Kindly enter 1st number in: "))
+int2 = (input("Kindly enter 2nd number in: "))
+int3 = (input("Kindly enter 3rd number in: "))
+int4 = (input("Kindly enter 4th number in: "))
+int5 = (input("Kindly enter 5th number in: "))
+
+
+list = [int1, int2, int3, int4, int5]
+#This the list where the inputted numbers from the user goes to.
+
+
+print("These are the 5 numbers you have inputted: ", list)
+#Displays the message and list
+
+
+
+EXERCISE 2: INTEGER LIST======================================================================================================================
+
+
+
+
+#10 values are in the list.
+intlist = [20, 56, 10, 33, 45, 69, 37, 58, 23, 50]
+for x in intlist:
+    print(x)
+#Printed the list using for loop.
+
+
+maxval = max(intlist)#This prints the max or highest value in the list. Hence its name, max()
+minval = min(intlist)#This prints the min or lowest value in the list.
+print(minval, maxval)
+#Displays higest and lowest.
+
+
+intlist.sort()
+#Sort is to list things in order.
+
+
+print(intlist)
+
+
+intlist.sort(reverse = True)
+print(intlist) #This is sort but with a true reverse to it, which means it it will list it in the oppsite way it did before.
+
+
+intlist2 = [40, 51]
+intlist.append(intlist2)
+#Append is to add at the end of the list. Like those 2 values 40, 51, are given a var of intlist 2, so then intlist of append adds in intlist2 at the end of the first list.
+
+
+print(intlist)
+
+
+
+EXERCISE 3 FILMS DICTIONARY======================================================================================================================
+
+
+
+Dictionary = {"Film Title:": "Deadpool 2", "Director:": "David Leitch", "Release date:": "May 18, 2018", "Box office:": "785.5 Million USD"}
+#items() loops both of the values. The values have variables of k and v.
+for k, v in Dictionary.items():
+    print(k, v)
+
+
+
+EXERCISE 4 YEAR TUPLES=========================================================================================================================
+
+
+
+#The tuple have the years listed in
+year = (2017,2003,2011,2005,1987,2009,2020,2018,2009)
+
+
+#[1] refers to accessing the 2nd thing in the tuple. 
+print(year[1])
+
+
+#The original tuple is reversed here. Then it has to be printed originally and reversed
+year1 = (2009, 2018, 2020, 2009, 1987, 2005, 2011, 2003, 2017)
+rev = reversed(year1)
+print(tuple(rev))
+print(year1)
+
+
+#count() is used to count how much of the item is repeated in the tuple.
+amount = year.count(2009)
+
+
+print(amount)
+
+
+#index() is used to find the position of an item.
+print(year.index(2018))
+
+
+#len() function is used to return the number of items in the tuple. Hence the name len.
+print(len(year))
+
+
+
+EXERCISE 5 COUNT ITEMS=========================================================================================================================
+
+
+
+
+staff = ["Arshiya", "Usman", "Iftikhar", "Usman", "Anmol","Zainab","Iftikhar", "Arshiya","Jake","Iftikhar"]
+
+emptDict = {}
+
+for person in staff:
+    emptDict[person] = 0
+
+for person in staff:
+    emptDict[person] += 1
+
+for kiy, value in emptDict.items():
+    print(kiy + " : " + str(value))
