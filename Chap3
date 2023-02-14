@@ -1,0 +1,212 @@
+CHAPTER 3 EXERCISES=========================================================================================================================
+
+
+
+EXERCISE 1======================================================================================================================================
+
+
+
+
+
+#The code begins with a function that declares the first name, and last name. It tells the code to combine those two together once the command is executed after user input.
+def name(firstname, lastname):
+  print("Hello there. Your name is: ",firstname + " " + lastname)
+
+
+#User enters first name and last name
+firstname = input("Kindly enter your first name: ")
+lastname = input("And also your last name please: ")
+
+#The output is displayed by putting our var as name since it is declared in the function that it prints the contents that are mentioned there.
+name(firstname, lastname)
+
+
+
+
+
+
+EXERCSISE 2=====================================================================================================================================
+
+
+
+
+
+#A function that declares 2 numbers that will be added.
+def sum_input(num1,num2):
+  sum = num1 + num2
+  return sum
+
+#Code asks the user to input 2 numbers of their choice.
+num1 = int(input('Kindly enter the first number: '))
+num2 = int(input('And the second number: '))
+
+#And the code prints the sum up of the 2 numbers that are inputted by the user. 
+print(sum_input(num1,num2))
+
+
+
+
+
+EXERCSISE 3=====================================================================================================================================
+
+
+
+
+
+#Function that calculates the area of a square.
+def sqr():
+    Sides = float(input("Kindly enter the length of the sides: "))
+    Area = Sides * Sides
+    print("The area of the square is: ", Area)
+
+#Function that calculates the area of a circle.
+def crc():
+    Radius = float(input("Kindly enter the radius of the circle: "))
+    Area = 3.14 * Radius * Radius
+    print("The area of the circle is: ", Area)
+
+#Function that calculates the area of a triangle.
+def trg():
+    Base = float(input("Kindly enter the radius of the circle: "))
+    Height = float(input("Kindly enter the radius of the circle: "))
+    Area = 0.5 * Base * Height
+    print("The area of the triangle is: ", Area)
+
+
+#Begining of the main program
+print("List to calculate shapes:" )
+print("Input 1 to Calculate the area of a square")
+print("Input 2 to Calculate the area of a circle")
+print("Input 3 to Calculate the area of a triangle")
+select = int(input("Enter your input of your choice: "))
+
+if select == 1:
+    sqr()
+elif select == 2:
+    crc()
+elif select == 3:
+    trg()
+else:
+    print("Wrong input! Please try again!")
+    
+    
+    
+EXERCSISE 4=====================================================================================================================================
+
+
+#Functions to decalre the operations.
+
+#Function for addition.
+def addition(a, b):     
+   return a + b  
+
+#Function for subtraction.
+def difference(a, b):   
+   return a - b   
+
+#Function for multiplication.
+def multiplication(a, b):   
+   return a * b   
+
+#Function for division.
+def dividision(a, b):      
+   return a / b   
+
+#Function for modulus.
+def modu(a, b):
+   return a % b
+
+#Greeting the user a warm welcome to the software.
+print ("Welcome to the calculator!.")    
+print ("1. Add")    
+print ("2. Subtract")    
+print ("3. Multiply")    
+print ("4. Divide")    
+print ("5. Modulus")
+    
+#Software will ask the user for a decision to pick.
+desision = int(input("Kindly enter an operation of your choice (1/ 2/ 3/ 4/ 5): "))
+    
+#Once the user has made a descision, the software will ask the user to input 2 numbers.
+Num1 = int (input ("Kindly enter the first number: "))    
+Num2 = int (input ("Kindly enter the second number: "))    
+    
+#If the user chose 1, then the operation will be addition.
+if desision == 1:    
+   print (Num1, " + ", Num2, " = ", addition(Num1, Num2))    
+   
+#If the user chose 2, then the operation will be subtraction.   
+elif desision == 2:    
+   print (Num1, " - ", Num2, " = ", difference(Num1, Num2))    
+    
+#If the user chose 3, then the operation will be multiplication. 
+elif desision == 3:    
+   print (Num1, " * ", Num2, " = ", multiplication(Num1, Num2))    
+
+#If the user chose 4, then the operation will be division. 
+elif desision == 4:    
+   print (Num1, " / ", Num2, " = ", dividision(Num1, Num2))
+   
+#If the user chose 5, then the operation will be modulus. 
+elif desision == 5:    
+   print (Num1, " % ", Num2, " = ", modu(Num1, Num2))  
+
+#This will print if the user has entered an invalid input.
+else:    
+   print ("Invalid input! Please try again!")    
+   
+   
+EXERCISE 5=============================================================================================================================
+
+
+def producList(PList)
+
+     #The elements are multiplied by one.
+     answer = 1
+     for a in PList:
+         answer = answer * a
+     return answer
+     
+#First and second lists with their elements.
+
+ListFirstOne = [6, 8, 4, 2]
+ListSecondTwo = [5, 9, 7, 3]
+print("The product of the first list:", producList(ListFirstOne))
+print("The product of the second list: ", [producList(ListSecondTwo))
+     
+     
+     
+EXERCISE 6=============================================================================================================================
+
+
+def Fact(n):  
+   if n == 1:  
+       return n  
+   else:  
+       return n*Fact(n-1)  
+#Taking inpout from the user.
+num = int(input("Kindly enter a number: "))  
+#Its checking if the users input is valid. Negative numbers are prohibited.
+
+if num < 0:  
+   print("Negative numbers are invalid! Please try again!")  
+
+   #If the users enters 0 then the code will say the factorial for 0 is 1.
+elif num == 0:  
+   print("The factorial for 0 is 1.")  
+
+else:  
+   print("The factorial for",num,"is",Fact(num))  
+
+
+
+EXERCISE 7=============================================================================================================================
+
+
+
+#List of delaring the tuples.
+marks = [("CodeLab I",67),("web Development", 75),("CodeLabII",74),("Smartphone Apps",68),("Games Development",70),("Responsive web",65)]
+
+#The tuples are sortedby the item value of the second element of the tuple.
+Marks = sorted(marks, key = lambda x : x[1])
+print(Marks)
