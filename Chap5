@@ -1,0 +1,136 @@
+CHAPTER 5==============================================================================================================================================
+
+
+
+EXECERISE 1============================================================================================================================================
+
+
+class doog:
+  def __init__(self, breed, age, name):
+        self.breed = breed
+        self.age = age
+        self.name = name
+
+  def bark(self):
+    print("ARF ARF!!!")
+kalb_one = doog("Rottweiler", 5, "Tyson")
+kalb_two = doog("Caucasian Shepherd", 4, "Baloo")
+print(f"{kalb_one.name} comes from a breed of {kalb_one.breed} and is {kalb_one.age} years old.")
+print(f"{kalb_two.name} comes from a breed of {kalb_two.breed} and is {kalb_two.age} years old.")
+
+if kalb_one.age > kalb_two.age:
+  olderDog = kalb_one
+else:
+  olderDog = kalb_two
+print(f'{olderDog.name} is the older dog so,') ; olderDog.bark()
+
+
+
+EXECERISE 2============================================================================================================================================
+
+
+
+class stewdent:
+  def __init__(self, name, Mark1, Mark2, Mark3):
+        self.name = name
+        self.Mark1 = Mark1
+        self.Mark2 = Mark2
+        self.Mark3 = Mark3
+
+  def gradeCalculate(self):
+    return (self.Mark1 + self.Mark2 + self.Mark3) / 3
+
+  def show(self):
+    print(f"{self.name}'s average grade is {self.gradeCalculate():.2f}")
+
+studentOne = stewdent("Joshua", 82, 93, 89)
+studentOne.show()
+
+print("Kindly enter data for the second student: ")
+name = input("Name: ")
+Mark1 = int(input("Mark 1: "))
+Mark2 = int(input("Mark 2: "))
+Mark3 = int(input("Mark 3: "))
+SecStudent = stewdent(name, Mark1, Mark2, Mark3)
+SecStudent.show()
+
+
+
+
+EXECERISE 3============================================================================================================================================
+
+
+
+class emp:
+  def __init__(self, name, ID, age, salary):
+        self.name = name
+        self.ID = ID
+        self.age = age
+        self.salary = salary
+
+  def Sdata(self):
+    self.name = input("Kindly enter name: ")
+    self.ID = input("Kindly enter ID: ")
+    self.age = int(input("Kindly enter age: "))
+    self.salary = int(input("Kindly enter salary: "))
+
+  def Gdata(self):
+    print(f"NAME: {self.name}")
+    print(f"ID: {self.ID}")
+    print(f"AGE: {self.age}")
+    print(f"SALARY: {self.salary}")
+
+emp_list = []
+
+for i in range(5):
+  empl = emp("", 0, "", 0)
+  empl.Sdata()
+  emp_list.append(empl)
+
+for empl in emp_list:
+    empl.Gdata()
+    print()
+
+
+
+
+EXECERISE 4============================================================================================================================================
+
+
+
+import math
+
+class shabes:
+  def Isides(self):
+        self.sides1 = float(input("Kindly input 1st side: "))
+        self.sides2 = float(input("Kindly input 2nd side: "))
+
+class circ(shabes):
+    def Area(self):
+        return math.pi * self.sides1 ** 2
+
+class rect(shabes):
+    def Area(self):
+        return self.sides1 * self.sides2
+
+class trg(shabes):
+    def Area(self):
+        return self.sides1 * self.sides2 / 2
+
+
+shabe = shabes()
+shabe.Isides()
+
+Rectangle = rect()
+Rectangle.sides1 = shabe.sides1
+Rectangle.sides2 = shabe.sides2
+print(f"Area for rectangle: {Rectangle.Area():.2f}")
+
+Tri = trg()
+Tri.sides1 = shabe.sides1
+Tri.sides2 = shabe.sides2
+print(f"Area for Triangle: {Tri.Area():.2f}")
+
+Circle = circ()
+Circle.sides1 = shabe.sides1
+print(f"Area for circle: {Circle.Area():.2f}")
